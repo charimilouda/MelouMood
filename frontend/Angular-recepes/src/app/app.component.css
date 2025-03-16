@@ -1,0 +1,18 @@
+/* Assurez-vous que la barre de navigation est bien fixée en haut */
+nav.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Assurez-vous que la barre de navigation est au-dessus des autres éléments */
+}
+
+/* Ajoutez un padding ou une marge pour le contenu principal afin qu'il ne soit pas caché sous la barre de navigation */
+.app-container {
+  margin-top: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+}
+
+/* Style de base pour les pages */
+.page-content {
+  padding: 20px; /* Ajustez le padding selon vos besoins */
+}

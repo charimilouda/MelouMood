@@ -1,0 +1,76 @@
+
+  
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Découvrez les meilleures recettes!</h1>
+      <p>Explorez une variété de recettes savoureuses créées par des chefs passionnés.</p>
+    </div>
+  </header>
+  
+  <div class="container mt-4">
+    <!-- Row for the search input and button -->
+    <div class="row mb-4">
+      <div class="row search-container">
+        <div class="col-9">
+            <input type="text" class="form-control" placeholder="Rechercher des recettes..." [(ngModel)]="searchQuery">
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary w-100" (click)="search()">Rechercher</button>
+        </div>
+    </div>
+    
+    </div>
+  
+    <!-- Grid for recipes -->
+    <!-- Grid for recipes -->
+    <div class="row">
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-4" *ngFor="let recette of recettes | orderBy: 'dateCreation' | filter: searchQuery | slice:(page-1)*itemsPerPage:page*itemsPerPage">
+        <div class="card">
+          <img [src]="recette.photos" class="card-img-top" alt="{{recette.titre}}">
+          <div class="card-body">
+            <h5 class="card-title">{{recette.titre}}</h5>
+            <p class="card-text">Auteur: {{recette.auteur}}</p>
+            <div class="rating">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                <i class="fa"
+                  [ngClass]="getStarClass(i, recette.averageRating)"></i>
+              </ng-container>
+              <span class="rating-text">
+                <!-- Afficher la note uniquement si elle est non nulle -->
+                {{recette.averageRating && recette.averageRating > 0 ? recette.averageRating.toFixed(1) : 'Aucune évaluation'}}
+              </span>
+            </div>
+          </div>
+          <div class="card-action">
+            <button class="btn btn-primary" (click)="showDetails(recette)">Détails</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
+<!-- Pagination -->
+<nav>
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [ngClass]="{ 'disabled': page === 1 }">
+      <a class="page-link" (click)="page = page - 1">
+        <i class="fas fa-chevron-left"></i> <!-- Icône pour "Précédent" -->
+      </a>
+    </li>
+    <li class="page-item" *ngFor="let p of [].constructor(totalPages); let i = index" [ngClass]="{ 'active': page === i + 1 }">
+      <a class="page-link" (click)="page = i + 1">{{ i + 1 }}</a>
+    </li>
+    <li class="page-item" [ngClass]="{ 'disabled': page === totalPages }">
+      <a class="page-link" (click)="page = page + 1">
+        <i class="fas fa-chevron-right"></i> <!-- Icône pour "Suivant" -->
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  

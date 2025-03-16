@@ -1,0 +1,44 @@
+<div class="page-container">
+  <div *ngIf="recette">
+    <!-- Titre de la recette -->
+    <h1 class="recette-title">{{ recette.titre }}</h1>
+
+    <!-- Image de la recette -->
+    <img [src]="recette.photos" alt="Image de la recette" class="recette-image">
+
+    <!-- Ingrédients -->
+    <h2 class="subtitle">Ingrédients</h2>
+    <p class="recette-ingredients">{{ recette.ingredients }}</p>
+
+    <!-- Étapes de préparation -->
+    <h2 class="subtitle">Étapes de préparation</h2>
+    <p class="recette-etapes">{{ recette.etapes }}</p>
+
+    <!-- Évaluation -->
+    <h2 class="subtitle">Évaluation</h2>
+    <div *ngIf="recette?.averageRating !== undefined" class="rating">
+      <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+        <i class="fa"
+           [ngClass]="getStarClass(i + 1, recette.averageRating)"
+           (click)="rateRecipe(i + 1)"></i>
+      </ng-container>
+      <span class="rating-text">
+        {{ recette.averageRating.toFixed(1) || 'N/A' }} / 5
+      </span>
+    </div>
+
+    <!-- Commentaires -->
+    <h2 class="subtitle">Commentaires</h2>
+    <textarea class="comment-textarea" [(ngModel)]="newComment" placeholder="Ajouter un commentaire"></textarea>
+  <button class="comment-button" (click)="submitComment()">Envoyer</button>
+  
+  <div *ngFor="let commentaire of commentaires">
+    <div class="comment">
+      <p><strong>{{ commentaire.auteurId}} </strong> 
+      <span class="comment-date">{{ commentaire.datePublication | date }}</span></p>
+      <p>{{ commentaire.texte }}</p>
+      <hr class="comment-divider">
+    </div>
+  </div>
+  </div>
+</div>

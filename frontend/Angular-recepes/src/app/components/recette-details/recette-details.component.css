@@ -1,0 +1,73 @@
+/* Style pour le conteneur principal de la page */
+/* Style pour le conteneur principal de la page */
+.page-container {
+  margin: 20px; /* Ajustez la marge selon vos besoins */
+  padding: 20px; /* Ajustez le padding selon vos besoins */
+  background-color: #f9f9f9; /* Couleur de fond optionnelle */
+  border-radius: 8px; /* Coins arrondis optionnels */
+  margin-top: 80px; /* Marge supérieure pour éloigner du navbar */
+}
+
+
+/* Exemple de styles pour les titres et sous-titres */
+.subtitle {
+  color: #277913; /* Couleur vert olive */
+  border-bottom: 2px solid #277913; /* Ligne de séparation sous le sous-titre */
+  padding-bottom: 5px; /* Espace entre le texte et la ligne */
+  margin-bottom: 10px; /* Espace entre la ligne et le contenu suivant */
+}
+
+/* Exemple de styles pour les autres éléments */
+.recette-title {
+  font-size: 2em;
+  color: #0b7d26; /* Couleur vert foncé */
+  margin-bottom: 20px;
+}
+
+.recette-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recette-ingredients, .recette-etapes {
+  margin-bottom: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rating-text {
+  margin-left: 10px;
+}
+
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.comment-button {
+  background-color: #277913; /* Couleur vert olive */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}

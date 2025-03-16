@@ -1,0 +1,152 @@
+body {
+    padding-top: 56px; /* Pour compenser la hauteur de la barre de navigation */
+  }
+
+  .search-container .form-control {
+    border-radius: 25px;
+    border: 1px solid #ced4da;
+    box-shadow: none; /* Supprimer l'ombre portée par défaut */
+}
+
+.search-container .form-control:focus {
+    border-color: #ced4da; /* Couleur de bordure quand le champ est en focus */
+    box-shadow: none; /* Supprimer l'ombre portée par défaut */
+}
+
+.search-container .btn {
+    border-radius: 25px; /* Coins arrondis pour le bouton */
+}
+
+  .hero {
+    background-image: url('../../../../public/assets/images/recettes/chiken.jpg'); /* Remplacez par le chemin correct */
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 5px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Assure que la carte occupe toute la hauteur disponible */
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    width: 100%; /* Assure que l'image occupe toute la largeur de la carte */
+    height: 200px; /* Fixe une hauteur uniforme pour toutes les images */
+    object-fit: cover; /* Remplit le conteneur sans déformer l'image */
+  }
+  
+  .card-body {
+    flex: 1; /* Permet à la zone de contenu de s'étendre pour remplir l'espace disponible */
+  }
+  
+  .card-action {
+    text-align: center; /* Centre le bouton */
+    padding: 10px; /* Ajustez le padding selon vos besoins */
+    background-color: transparent; /* Fond transparent */
+    border-top: 1px solid #ddd; /* Optionnel, pour ajouter une ligne fine au-dessus du bouton */
+  }
+  
+  
+  .card-img-top {
+    border-bottom: 1px solid #ddd;
+    width: 100%; /* Assure que l'image occupe toute la largeur de la carte */
+    height: 200px; /* Fixe une hauteur uniforme pour toutes les images */
+    object-fit: cover; /* Remplit le conteneur sans déformer l'image */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    font-size: 0.875rem;
+  }
+  
+  .btn-primary {
+    background-color: #399023c7;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #277913;
+  }
+  
+  /* Responsive design pour la barre de recherche */
+@media (max-width: 576px) {
+    .input-group {
+      flex-direction: column;
+    }
+  
+    .input-group .btn {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+  
+  /* Style pour la pagination */
+  .page-link {
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.25rem; /* Augmenter la taille des icônes */
+    color: #0b7d26;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .page-link:hover {
+    color: #6D6E3F;
+    background-color: #e9ecef;
+    border-color: #ddd;
+  }
+  
+  
+  
+  .page-item.active .page-link {
+    color: #fff;
+    background-color:#427535f8;
+    border-color: #427535f8;
+  }
+  
+  /*
+  rating
+  */
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating .fa-star,
+  .rating .fa-star-half-alt,
+  .rating .fa-star-o {
+    color: gold;
+    font-size: 1.2rem;
+  }
+  
+  .rating .fa-star-o {
+    color: #ddd; /* Couleur des étoiles vides */
+  }
+  
+  .rating .rating-text {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+  }
+  
